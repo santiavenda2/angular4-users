@@ -2,6 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'users',
-  template: '<h1>Users</h1>',
+  templateUrl: './users.component.html',
 })
-export class UsersComponent  {}
+export class UsersComponent  {
+
+  usersList: any[] = [
+    {
+      id: 1,
+      name: 'test',
+      email: 'test@email.com',
+    }
+  ];
+}
