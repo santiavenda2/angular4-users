@@ -8,9 +8,12 @@ import { UsersComponent} from './users.component';
 import { PostsComponent} from './posts.component';
 import { routing } from './app.routing';
 
+import { UsersService} from './users.service';
+
 @NgModule({
   imports:      [ BrowserModule , routing],
   declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent ],
+  providers: [UsersService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

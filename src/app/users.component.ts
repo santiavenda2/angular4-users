@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UsersService} from './users.service';
 
 @Component({
   selector: 'users',
@@ -6,11 +7,9 @@ import { Component } from '@angular/core';
 })
 export class UsersComponent  {
 
-  usersList: any[] = [
-    {
-      id: 1,
-      name: 'test',
-      email: 'test@email.com',
-    }
-  ];
+  usersList: any[] = [];
+
+  constructor(usersService: UsersService) {
+    this.usersList = usersService.getUsers();
+  }
 }
