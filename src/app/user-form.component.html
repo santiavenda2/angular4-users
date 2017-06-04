@@ -1,38 +1,38 @@
 <h1>Add user</h1>
 <div class="col-md-6 col-lg-6 well">
-  <form>
+  <form [formGroup]="form">
     <fieldset>
       <legend>User</legend>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" class="form-control">
+        <input type="text" id="name" formControlName="name" class="form-control">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" id="email" class="form-control">
+        <input type="text" id="email" formControlName="email" class="form-control">
       </div>
       <div class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" id="phone" class="form-control">
+        <input type="text" id="phone" formControlName="phone" class="form-control">
       </div>
     </fieldset>
-    <fieldset>
+    <fieldset formGroupName="address">
       <legend>Addres</legend>
       <div class="form-group">
-        <label for="street">Stree</label>
-        <input type="text" id="street" class="form-control">
+        <label for="street">Street</label>
+        <input type="text" id="street" formControlName="street" class="form-control">
       </div>
       <div class="form-group">
         <label for="suite">Suite</label>
-        <input type="text" id="suite" class="form-control">
+        <input type="text" id="suite" formControlName="suite" class="form-control">
       </div>
       <div class="form-group">
         <label for="city">City</label>
-        <input type="text" id="city" class="form-control">
+        <input type="text" id="city" formControlName="city" class="form-control">
       </div>
       <div class="form-group">
         <label for="zipcode">Zip Code</label>
-        <input type="text" id="zipcode" class="form-control">
+        <input type="text" id="zipcode" formControlName="zipcode" class="form-control">
       </div>
     </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>

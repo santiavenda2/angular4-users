@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule,  JsonpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { NavbarComponent} from './navbar.component';
@@ -15,7 +16,7 @@ import { routing } from './app.routing';
 import { UsersService} from './users.service';
 
 @NgModule({
-  imports:      [ BrowserModule , routing, HttpModule, JsonpModule],
+  imports:      [ BrowserModule , routing, HttpModule, JsonpModule, FormsModule, ReactiveFormsModule],
   declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent, UserFormComponent ],
   providers: [UsersService],
   bootstrap:    [ AppComponent ]
