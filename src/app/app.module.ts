@@ -8,6 +8,7 @@ import { AppComponent }  from './app.component';
 import { NavbarComponent} from './navbar.component';
 import { HomeComponent} from './home.component';
 import { UsersComponent} from './users.component';
+import { UserFormComponent} from './user-form.component';
 import { PostsComponent} from './posts.component';
 import { routing } from './app.routing';
 
@@ -15,7 +16,7 @@ import { UsersService} from './users.service';
 
 @NgModule({
   imports:      [ BrowserModule , routing, HttpModule, JsonpModule],
-  declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent ],
+  declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent, UserFormComponent ],
   providers: [UsersService],
   bootstrap:    [ AppComponent ]
 })
