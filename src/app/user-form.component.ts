@@ -6,10 +6,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UserFormComponent {
 
-  form: FormGroup;
+  userForm: FormGroup;
 
   constructor(fb: FormBuilder) {
-    this.form = fb.group({
+    this.userForm = fb.group({
       name: ['', Validators.required],
       email: [''],
       phone: [],
