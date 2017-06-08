@@ -14,11 +14,12 @@ import { PostsComponent} from './posts.component';
 import { routing } from './app.routing';
 
 import { UsersService} from './users.service';
+import { PreventUnsavedChangesGuard} from './prevent-unsaved-changes-guard.service';
 
 @NgModule({
   imports:      [ BrowserModule , routing, HttpModule, JsonpModule, FormsModule, ReactiveFormsModule],
-  declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent, UserFormComponent ],
-  providers: [UsersService],
+  declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent, UserFormComponent],
+  providers:    [UsersService, PreventUnsavedChangesGuard],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

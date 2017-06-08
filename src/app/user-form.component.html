@@ -1,19 +1,19 @@
 <h1>Add user</h1>
 <div class="col-md-6 col-lg-6 well">
-  <form [formGroup]="userForm">
+  <form [formGroup]="form">
     <fieldset>
       <legend>User</legend>
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" formControlName="name" class="form-control">
-        <div *ngIf="userForm.controls.name.touched && !userForm.controls.name.valid" class="alert alert-danger">
+        <div *ngIf="form.controls.name.touched && !form.controls.name.valid" class="alert alert-danger">
           Name is required.
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
         <input type="text" id="email" formControlName="email" class="form-control">
-        <div *ngIf="userForm.controls.email.touched && !userForm.controls.email.valid" class="alert alert-danger">
+        <div *ngIf="form.controls.email.touched && !form.controls.email.valid" class="alert alert-danger">
           Invalid email
         </div>
       </div>
@@ -41,6 +41,6 @@
         <input type="text" id="zipcode" formControlName="zipcode" class="form-control">
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary" [class.disabled]="!userForm.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [class.disabled]="!form.valid">Submit</button>
   </form>
 </div>

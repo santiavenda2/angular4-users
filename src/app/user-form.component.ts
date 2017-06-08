@@ -7,10 +7,10 @@ import { BasicValidators } from './basicValidators';
 })
 export class UserFormComponent {
 
-  userForm: FormGroup;
+  form: FormGroup;
 
   constructor(fb: FormBuilder) {
-    this.userForm = fb.group({
+    this.form = fb.group({
       name: ['', Validators.required],
       email: ['', BasicValidators.email],
       phone: [],
