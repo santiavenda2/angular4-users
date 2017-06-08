@@ -38,6 +38,6 @@
         <input type="text" id="zipcode" formControlName="zipcode" class="form-control">
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [class.disabled]="!userForm.valid">Submit</button>
   </form>
 </div>
