@@ -18,4 +18,8 @@ export class UsersService {
     let userData = JSON.stringify(user);
     return this._http.post(this._url, userData).map(response => response.json());
   }
+
+  getUser(userId: number) {
+    return this._http.get(this._url + '/' + userId.toString()).map(res => res.json());
+  }
 }
