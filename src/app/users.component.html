@@ -23,7 +23,13 @@
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
         </a>
       </td>
-      <td><a><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+      <td>
+        <span (click)="deleteUser(user)"
+              class="glyphicon glyphicon-remove"
+              aria-hidden="true"
+              role="button">
+        </span>
+      </td>
     </tr>
     </tbody>
   </table>

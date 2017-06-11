@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from './users.service';
+import {User} from './user';
 
 @Component({
   selector: 'users',
@@ -19,4 +20,16 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  deleteUser(user: User) {
+    if (confirm('Are you sure you want to delete ' + user.name + '?')) {
+      let index = this.usersList.indexOf(user);
+
+
+      this._usersService.deleteUser(user.id)
+        .subscribe(
+          response => {
+            this.usersList.splice(index, 1);
+          });
+    }
+  }
 }

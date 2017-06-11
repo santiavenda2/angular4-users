@@ -19,11 +19,16 @@ export class UsersService {
     return this._http.post(this._url, userData).map(response => response.json());
   }
 
-  getUser(userId: number) {
-    return this._http.get(this._url + '/' + userId.toString()).map(res => res.json());
+  getUser(userId: string) {
+    return this._http.get(this._url + '/' + userId).map(res => res.json());
   }
 
   updateUser(user: User) {
     return this._http.put(this._url + '/' + user.id, user).map(res => res.json());
   }
+
+  deleteUser(userId: string) {
+    return this._http.delete(this._url + '/' + userId).map(res => res.json());
+  }
+
 }
