@@ -1,12 +1,12 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { BasicValidators } from './basicValidators';
+import { BasicValidators } from '../basicValidators';
 import { UsersService } from './users.service';
 import { User } from './user';
 
 @Component({
-  templateUrl: './user-form.component.html'
+  templateUrl: 'app/users/user-form.component.html'
 })
 export class UserFormComponent implements OnInit {
 
@@ -46,7 +46,7 @@ export class UserFormComponent implements OnInit {
       }
 
 
-      this._usersService.getUser(id)
+      this._usersService.getUser(id.toString())
         .subscribe(
           user => this.user = user,
           response => {
@@ -58,7 +58,7 @@ export class UserFormComponent implements OnInit {
   }
 
   save() {
-    let result
+    let result;
     if (this.user.id) {
       result = this._usersService.updateUser(this.user);
     } else {

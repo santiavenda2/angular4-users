@@ -8,20 +8,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { NavbarComponent} from './navbar.component';
 import { HomeComponent} from './home.component';
-import { UsersComponent} from './users.component';
-import { UserFormComponent} from './user-form.component';
+import { UsersModule } from './users/user.module';
 import { NotFoundComponent} from './not-found.component';
 import { PostsComponent} from './posts.component';
+import { usersRouting } from './users/users.routing';
 import { routing } from './app.routing';
 
-import { UsersService} from './users.service';
 import { PreventUnsavedChangesGuard} from './prevent-unsaved-changes-guard.service';
 
 @NgModule({
-  imports:      [ BrowserModule , routing, HttpModule, JsonpModule, FormsModule, ReactiveFormsModule],
-  declarations: [ AppComponent, NavbarComponent, HomeComponent, UsersComponent, PostsComponent, UserFormComponent,
+  imports: [
+    BrowserModule,
+    UsersModule,
+    usersRouting,
+    routing,
+  ],
+  declarations: [ AppComponent, NavbarComponent, HomeComponent, PostsComponent,
                   NotFoundComponent],
-  providers:    [UsersService, PreventUnsavedChangesGuard],
+  providers:    [PreventUnsavedChangesGuard],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
