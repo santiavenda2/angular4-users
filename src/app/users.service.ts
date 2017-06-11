@@ -22,4 +22,8 @@ export class UsersService {
   getUser(userId: number) {
     return this._http.get(this._url + '/' + userId.toString()).map(res => res.json());
   }
+
+  updateUser(user: User) {
+    return this._http.put(this._url + '/' + user.id, user).map(res => res.json());
+  }
 }

@@ -57,8 +57,13 @@ export class UserFormComponent implements OnInit {
     });
   }
 
-  create() {
-    let result = this._usersService.createUser(this.user);
+  save() {
+    let result
+    if (this.user.id) {
+      result = this._usersService.updateUser(this.user);
+    } else {
+      result = this._usersService.createUser(this.user);
+    }
 
     result.subscribe(x => {
       this.form.markAsPristine();
