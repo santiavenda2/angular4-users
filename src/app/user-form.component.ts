@@ -51,7 +51,7 @@ export class UserFormComponent implements OnInit {
           user => this.user = user,
           response => {
             if (response.status === 404) {
-              this._router.navigate(['NotFound']);
+              this._router.navigate(['not-found']);
             }
           });
     });
